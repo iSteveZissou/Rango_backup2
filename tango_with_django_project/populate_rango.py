@@ -1,6 +1,6 @@
 import os
 import sys
-
+#I added all this 
 from django.core.wsgi import get_wsgi_application
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'tango_with_django_project.settings'

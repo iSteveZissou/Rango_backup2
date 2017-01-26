@@ -26,7 +26,7 @@ def show_category(request, category_name_slug):
     
     try:
         
-        category = Category.objects.get(slug=category_name)
+        category = Category.objects.get(slug=category_name_slug)
         
        
         pages = Page.objects.filter(category=category)
@@ -42,4 +42,4 @@ def show_category(request, category_name_slug):
         context_dict['pages'] = None
 
     # Go render the resonse and return it to thee client.
-    return render_to_response('rango/category.html', context_dict, context)
+    return render(request, 'rango/category.html', context_dict)
