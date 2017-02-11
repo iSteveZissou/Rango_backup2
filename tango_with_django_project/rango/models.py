@@ -13,7 +13,7 @@ class Category(models.Model):
     likes = models.IntegerField(default=0)
     slug = models.SlugField(blank=True)
     #slug = models.SlugField(unique=True)
-    
+
     def save(self, *args, **kwargs):
 		self.slug = slugify(self.name) 
 		super(Category, self).save(*args, **kwargs)
@@ -22,7 +22,7 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = "categories"
-    
+
     def __unicode__(self):
         return self.name
 
@@ -31,6 +31,6 @@ class Page(models.Model):
     title = models.CharField(max_length=128)
     url = models.URLField()
     views = models.IntegerField(default=0)
-    
+
     def __unicode__(self):
         return self.title
