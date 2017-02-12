@@ -12,6 +12,7 @@ def index(request):
     return render(request, 'rango/index.html', context_dict)
 
 def about(request):
+    print(request.method)
     return render(request, 'rango/about.html')
 # Create your views here.
 def show_category(request, category_name_slug):
